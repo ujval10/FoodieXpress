@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart – FoodieXpress</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply theme as early as possible
+    (function() {
+      var theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">FoodieXpress</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#menu">Menu</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main style="min-height:60vh;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <h1>Your Cart</h1>
+    <div id="cart-container" class="cart-page-container"></div>
+    <a href="index.html" style="margin-top:2rem;color:var(--accent);text-decoration:underline;">&larr; Back to Home</a>
+  </main>
+  <script>
+    // Dish image mapping (should match menu)
+    const dishImages = {
+      'Paneer Butter Masala': 'images/menu images/Paneer Butter Masala.jpg',
+      'Chicken Hyderabadi Biryani': 'images/menu images/chicken-hyderabadi-biryani.jpg',
+      'Margherita Pizza': 'images/menu images/pizza.jpg',
+      'Masala Dosa': 'images/menu images/masala dosa.jpg',
+      'Garlic Butter Naan': 'images/menu images/garlic-butter-naan.jpg',
+      'Gulab Jamun': 'images/menu images/Gulub Jamun.jpg',
+      'Chole Bhature': 'images/menu images/chole bature.jpg',
+      'Mango Lassi': 'images/menu images/mango lassi.webp',
+      'Dal Makhani': 'images/menu images/Dal-Makhani.jpg',
+      'Tandoori Chicken': 'images/menu images/Tandoori Chicken.jpg',
+      'Samosa': 'images/menu images/Samosa.jpg',
+      'Rajma Chawal': 'images/menu images/Rajma Chawal.webp',
+      'Pav Bhaji': 'images/menu images/Pav Baji.jpg',
+      'Mutton Rogan Josh': 'images/menu images/Mutton-Rogan-Josh.jpg',
+      'Fish Curry': 'images/menu images/Fish curry.jpg',
+      'Rasmalai': 'images/menu images/Rasmalai.webp',
+      'Idli Sambhar': 'images/menu images/Idli-Sambar.jpg',
+      'Aloo Paratha': 'images/menu images/Aloo-Paratha.jpg',
+      'Veg Hakka Noodles': 'images/menu images/Veg Hakka Noodles.jpg',
+    };
+    // Get cart from localStorage or fallback to empty
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart') || '{}');
+    }
+    function setCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function renderCart() {
+      const cart = getCart();
+      const container = document.getElementById('cart-container');
+      container.innerHTML = '';
+      const items = Object.values(cart);
+      if (items.length === 0) {
+        container.innerHTML = '<p style="color:#888;text-align:center;">Your cart is empty.</p>';
+        return;
+      }
+      const ul = document.createElement('ul');
+      ul.className = 'cart-list cart-list-page';
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <img src="${dishImages[item.name] || ''}" alt="${item.name}" class="cart-page-img" />
+          <div class="cart-item-info">
+            <span class="cart-item-title">${item.name}</span>
+            <span class="cart-item-price">₹${item.price * item.qty}</span>
+          </div>
+          <div class="cart-qty-controls">
+            <button class="cart-qty-btn cart-minus" data-dish="${item.name}" title="Decrease">-</button>
+            <span class="cart-qty">${item.qty}</span>
+            <button class="cart-qty-btn cart-plus" data-dish="${item.name}" title="Increase">+</button>
+          </div>
+          <button class="cart-remove-btn" data-dish="${item.name}" title="Remove">&times;</button>
+          <button class="cart-confirm-btn" data-dish="${item.name}" title="Confirm">Confirm</button>
+        `;
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    }
+    document.addEventListener('DOMContentLoaded', renderCart);
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.cart-list-page')) return;
+      const cart = getCart();
+      // +
+      if (e.target.classList.contains('cart-plus')) {
+        const name = e.target.getAttribute('data-dish');
+        cart[name].qty++;
+        setCart(cart);
+        renderCart();
+      }
+      // -
+      if (e.target.classList.contains('cart-minus')) {
+        const name = e.target.getAttribute('data-dish');
+        if (cart[name].qty > 1) {
+          cart[name].qty--;
+        } else {
+          delete cart[name];
+        }
+        setCart(cart);
+        renderCart();
+      }
+      // Remove
+      if (e.target.classList.contains('cart-remove-btn')) {
+        const name = e.target.getAttribute('data-dish');
+        delete cart[name];
+        setCart(cart);
+        renderCart();
+      }
+      // Confirm (for now, just alert)
+      if (e.target.classList.contains('cart-confirm-btn')) {
+        const name = e.target.getAttribute('data-dish');
+        alert('Order confirmed for: ' + name + ' (x' + cart[name].qty + ')');
+      }
+    });
+  </script>
+  <style>
+    html[data-theme="dark"] {
+      background: #181818;
+      color: #f1f1f1;
+    }
+    .cart-page-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 1.5rem auto 0 auto;
+    }
+    .cart-list-page {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .cart-list-page li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+    html[data-theme="dark"] .cart-list-page li {
+      border-bottom: 1px solid #333;
+    }
+    .cart-page-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 0.7rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .cart-list-page .cart-item-info {
+      flex: 1;
+      min-width: 120px;
+    }
+    .cart-list-page .cart-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .cart-list-page .cart-qty-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .cart-list-page .cart-qty-btn:hover {
+      background: #d9363e;
+    }
+    .cart-list-page .cart-qty {
+      min-width: 1.5rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    .cart-list-page .cart-remove-btn {
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+      transition: color 0.2s;
+    }
+    .cart-list-page .cart-remove-btn:hover {
+      color: var(--accent);
+    }
+    .cart-list-page .cart-confirm-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-left: 0.7rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cart-list-page .cart-confirm-btn:hover {
+      background: #d9363e;
+    }
+    @media (max-width: 600px) {
+      .cart-page-container {
+        max-width: 98vw;
+      }
+      .cart-list-page li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .cart-page-img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
+</body>
+</html> 

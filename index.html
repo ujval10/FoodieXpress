@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieXpress – Online Food Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" class="loader"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="logo">FoodieXpress</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button id="cart-btn" aria-label="View cart" class="cart-btn">
+        <svg id="cart-svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span id="cart-notification" class="cart-notification"></span>
+      </button>
+      <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-carousel" id="hero-carousel">
+      <div class="hero-slide active">
+        <img src="images/hero.jpg" alt="Delicious food" />
+      </div>
+      <div class="hero-slide">
+        <img src="images/chicken-biryani.jpg" alt="Chicken Biryani" />
+      </div>
+      <div class="hero-slide">
+        <video src="images/Circle.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Order your next meal</h1>
+          <p>Delicious food delivered fast, fresh, and hot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="mission-hero">
+      <div class="mission-image">
+        <img src="images/Chef hero.webp" alt="Our Chef" />
+      </div>
+      <div class="mission-text">
+        <h2>Our Mission</h2>
+        <p>
+          At FoodieXpress, our mission is to deliver not just food, but an experience of quality, trust, and delight. We work with the best chefs and restaurants to ensure every meal is crafted with passion and precision. Our commitment to accuracy means your order is always right, and our focus on quality ensures every bite is fresh, hygienic, and delicious.<br><br>
+          <strong>From our kitchen to your doorstep, we promise a seamless, satisfying journey—every single time.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carousel Section -->
+  <section id="carousel" class="carousel">
+    <!-- Carousel items will go here -->
+  </section>
+
+  <!-- Food Cards Section -->
+  <div id="menu-overlay" class="slide-overlay">
+    <button class="slide-close" id="close-menu-overlay" aria-label="Close Menu">&times;</button>
+    <section id="menu" class="food-cards">
+      <h2>Featured Dishes</h2>
+      <div class="card-grid">
+        <div class="food-card" data-dish="Paneer Butter Masala" data-price="220">
+          <img src="images/menu images/Paneer Butter Masala.jpg" alt="Paneer Butter Masala" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Paneer Butter Masala</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹220</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Chicken Hyderabadi Biryani" data-price="250">
+          <img src="images/menu images/chicken-hyderabadi-biryani.jpg" alt="Chicken Hyderabadi Biryani" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Chicken Hyderabadi Biryani</h3>
+            <div class="food-card__rating">⭐ 4.7</div>
+            <div class="food-card__price">₹250</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Margherita Pizza" data-price="180">
+          <img src="images/menu images/pizza.jpg" alt="Margherita Pizza" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Margherita Pizza</h3>
+            <div class="food-card__rating">⭐ 4.3</div>
+            <div class="food-card__price">₹180</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Masala Dosa" data-price="120">
+          <img src="images/menu images/masala dosa.jpg" alt="Masala Dosa" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Masala Dosa</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹120</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Garlic Butter Naan" data-price="40">
+          <img src="images/menu images/garlic-butter-naan.jpg" alt="Garlic Butter Naan" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Garlic Butter Naan</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹40</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Gulab Jamun" data-price="90">
+          <img src="images/menu images/Gulub Jamun.jpg" alt="Gulab Jamun" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Gulab Jamun</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹90</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Chole Bhature" data-price="160">
+          <img src="images/menu images/chole bature.jpg" alt="Chole Bhature" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Chole Bhature</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹160</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Mango Lassi" data-price="70">
+          <img src="images/menu images/mango lassi.webp" alt="Mango Lassi" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Mango Lassi</h3>
+            <div class="food-card__rating">⭐ 4.9</div>
+            <div class="food-card__price">₹70</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Mutton Rogan Josh" data-price="320">
+          <img src="images/menu images/Mutton-Rogan-Josh.jpg" alt="Mutton Rogan Josh" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Mutton Rogan Josh</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹320</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Veg Hakka Noodles" data-price="140">
+          <img src="images/menu images/Veg Hakka Noodles.jpg" alt="Veg Hakka Noodles" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Veg Hakka Noodles</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹140</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Idli Sambhar" data-price="80">
+          <img src="images/menu images/Idli-Sambar.jpg" alt="Idli Sambhar" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Idli Sambhar</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹80</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Samosa" data-price="30">
+          <img src="images/menu images/Samosa.jpg" alt="Samosa" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Samosa</h3>
+            <div class="food-card__rating">⭐ 4.2</div>
+            <div class="food-card__price">₹30</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Tandoori Chicken" data-price="260">
+          <img src="images/menu images/Tandoori Chicken.jpg" alt="Tandoori Chicken" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Tandoori Chicken</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹260</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Rajma Chawal" data-price="150">
+          <img src="images/menu images/Rajma Chawal.webp" alt="Rajma Chawal" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Rajma Chawal</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹150</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Pav Bhaji" data-price="110">
+          <img src="images/menu images/Pav Baji.jpg" alt="Pav Bhaji" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Pav Bhaji</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹110</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Rasmalai" data-price="90">
+          <img src="images/menu images/Rasmalai.webp" alt="Rasmalai" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Rasmalai</h3>
+            <div class="food-card__rating">⭐ 4.7</div>
+            <div class="food-card__price">₹90</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Aloo Paratha" data-price="60">
+          <img src="images/menu images/Aloo-Paratha.jpg" alt="Aloo Paratha" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Aloo Paratha</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹60</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Fish Curry" data-price="270">
+          <img src="images/menu images/Fish curry.jpg" alt="Fish Curry" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Fish Curry</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹270</div>
+            <button class="food-card__add" title="Add to Cart">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Overlay Section -->
+  <div id="contact-overlay" class="slide-overlay">
+    <button class="slide-close" id="close-contact-overlay" aria-label="Close Contact">&times;</button>
+    <section class="contact-section">
+      <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>Have a question, feedback, or need help? Fill out the form below and our team will get back to you as soon as possible.</p>
+        <form id="contact-form" class="contact-form" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+          <div id="contact-success" class="contact-success" style="display:none;">Thank you for contacting us! We'll get back to you soon.</div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3>How FoodieXpress Works</h3>
+      <ul>
+        <li><strong>Browse & Order:</strong> Explore our diverse menu, add your favorite dishes to cart, and place your order in seconds.</li>
+        <li><strong>Quality & Freshness:</strong> We partner with top-rated restaurants and chefs to ensure every meal is prepared with the freshest ingredients and highest hygiene standards.</li>
+        <li><strong>Fast Delivery:</strong> Our delivery partners pick up your food hot and fresh, and bring it right to your doorstep—track your order in real time!</li>
+      </ul>
+      <p class="footer-note">&copy; 2024 FoodieXpress. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Pop-up Modal -->
+  <div id="scroll-popup" class="scroll-popup" style="display:none;">
+    <p>Subscribe to our newsletter for exclusive offers!</p>
+    <button id="close-popup">Close</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 

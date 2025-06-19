@@ -1,2 +1,37 @@
-# FoodieXpress
-**FoodieXpress** is a fully responsive, visually polished online food-ordering landing page, built using **HTML**, **CSS**, and **JavaScript**. Designed for modern food tech startups, this app offers a smooth and interactive user experience — from browsing dishes to learning how the service works.
+# FoodieXpress – Online Food Delivery Landing Page
+
+A pixel-perfect, responsive landing page for an online food-ordering service. Built with HTML5, CSS3, and vanilla JavaScript.
+
+## 🚀 Live Demo
+[View Live](#) <!-- Replace with your deployed URL -->
+
+## 📦 Features
+- Responsive design (mobile to desktop)
+- Dark & Light mode toggle
+- Custom loader animation
+- Sticky navbar with scroll-spy
+- Carousel of featured dishes/restaurants
+- Food cards with add-to-cart
+- Scroll-triggered pop-ups
+- "How It Works" step section
+- Customer testimonials (video & text)
+
+## 🛠 Stack
+- HTML5
+- CSS3 (BEM, CSS Variables)
+- JavaScript (ES6)
+
+## 🖼 Assets
+Place all images, videos, and loader animation in the `/assets` folder.
+
+## 🏁 Getting Started
+1. Clone the repo
+2. Add your assets to `/assets`
+3. Open `index.html` in your browser
+
+## 🧑‍💻 AI Tools Used
+- ChatGPT for code scaffolding, accessibility checks, and feature planning
+
+---
+
+**Design inspired by Zomato, Swiggy, and UberEats.** 

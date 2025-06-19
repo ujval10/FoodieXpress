@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu – FoodieXpress</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply theme as early as possible
+    (function() {
+      var theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">FoodieXpress</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="food-cards" style="padding-top:2rem;">
+      <h2>Our Menu</h2>
+      <div class="card-grid">
+        <div class="food-card" data-dish="Paneer Butter Masala" data-price="220">
+          <img src="images/menu images/Paneer Butter Masala.jpg" alt="Paneer Butter Masala" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Paneer Butter Masala</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹220</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Chicken Hyderabadi Biryani" data-price="250">
+          <img src="images/menu images/chicken-hyderabadi-biryani.jpg" alt="Chicken Hyderabadi Biryani" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Chicken Hyderabadi Biryani</h3>
+            <div class="food-card__rating">⭐ 4.7</div>
+            <div class="food-card__price">₹250</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Margherita Pizza" data-price="180">
+          <img src="images/menu images/pizza.jpg" alt="Margherita Pizza" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Margherita Pizza</h3>
+            <div class="food-card__rating">⭐ 4.3</div>
+            <div class="food-card__price">₹180</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Masala Dosa" data-price="120">
+          <img src="images/menu images/masala dosa.jpg" alt="Masala Dosa" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Masala Dosa</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹120</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Garlic Butter Naan" data-price="40">
+          <img src="images/menu images/garlic-butter-naan.jpg" alt="Garlic Butter Naan" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Garlic Butter Naan</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹40</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Gulab Jamun" data-price="90">
+          <img src="images/menu images/Gulub Jamun.jpg" alt="Gulab Jamun" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Gulab Jamun</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹90</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Chole Bhature" data-price="160">
+          <img src="images/menu images/chole bature.jpg" alt="Chole Bhature" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Chole Bhature</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹160</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Mango Lassi" data-price="70">
+          <img src="images/menu images/mango lassi.webp" alt="Mango Lassi" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Mango Lassi</h3>
+            <div class="food-card__rating">⭐ 4.9</div>
+            <div class="food-card__price">₹70</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Dal Makhani" data-price="180">
+          <img src="images/menu images/Dal-Makhani.jpg" alt="Dal Makhani" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Dal Makhani</h3>
+            <div class="food-card__rating">⭐ 4.7</div>
+            <div class="food-card__price">₹180</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Mutton Rogan Josh" data-price="320">
+          <img src="images/menu images/Mutton-Rogan-Josh.jpg" alt="Mutton Rogan Josh" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Mutton Rogan Josh</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹320</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Veg Hakka Noodles" data-price="140">
+          <img src="images/menu images/Veg Hakka Noodles.jpg" alt="Veg Hakka Noodles" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Veg Hakka Noodles</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹140</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Idli Sambhar" data-price="80">
+          <img src="images/menu images/Idli-Sambar.jpg" alt="Idli Sambhar" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Idli Sambhar</h3>
+            <div class="food-card__rating">⭐ 4.4</div>
+            <div class="food-card__price">₹80</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Samosa" data-price="30">
+          <img src="images/menu images/Samosa.jpg" alt="Samosa" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Samosa</h3>
+            <div class="food-card__rating">⭐ 4.2</div>
+            <div class="food-card__price">₹30</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Tandoori Chicken" data-price="260">
+          <img src="images/menu images/Tandoori Chicken.jpg" alt="Tandoori Chicken" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Tandoori Chicken</h3>
+            <div class="food-card__rating">⭐ 4.8</div>
+            <div class="food-card__price">₹260</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Rajma Chawal" data-price="150">
+          <img src="images/menu images/Rajma Chawal.webp" alt="Rajma Chawal" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Rajma Chawal</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹150</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Pav Bhaji" data-price="110">
+          <img src="images/menu images/Pav Baji.jpg" alt="Pav Bhaji" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Pav Bhaji</h3>
+            <div class="food-card__rating">⭐ 4.6</div>
+            <div class="food-card__price">₹110</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Rasmalai" data-price="90">
+          <img src="images/menu images/Rasmalai.webp" alt="Rasmalai" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Rasmalai</h3>
+            <div class="food-card__rating">⭐ 4.7</div>
+            <div class="food-card__price">₹90</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Aloo Paratha" data-price="60">
+          <img src="images/menu images/Aloo-Paratha.jpg" alt="Aloo Paratha" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Aloo Paratha</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹60</div>
+          </div>
+        </div>
+        <div class="food-card" data-dish="Fish Curry" data-price="270">
+          <img src="images/menu images/Fish curry.jpg" alt="Fish Curry" class="food-card__img" />
+          <div class="food-card__body">
+            <h3 class="food-card__title">Fish Curry</h3>
+            <div class="food-card__rating">⭐ 4.5</div>
+            <div class="food-card__price">₹270</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html> 
