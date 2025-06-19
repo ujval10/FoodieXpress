@@ -11,8 +11,7 @@ A pixel-perfect, responsive landing page for an online food-ordering service. Bu
 - Food cards with add-to-cart
 - Scroll-triggered pop-ups
 - "How It Works" step section
-- Customer testimonials (video & text)
-
+- 
 ## 🛠 Stack
 - HTML5
 - CSS3 (BEM, CSS Variables)
