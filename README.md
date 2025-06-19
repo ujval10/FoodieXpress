@@ -2,9 +2,6 @@
 
 A pixel-perfect, responsive landing page for an online food-ordering service. Built with HTML5, CSS3, and vanilla JavaScript.
 
-## 🚀 Live Demo
-[View Live](#) <!-- Replace with your deployed URL -->
-
 ## 📦 Features
 - Responsive design (mobile to desktop)
 - Dark & Light mode toggle
